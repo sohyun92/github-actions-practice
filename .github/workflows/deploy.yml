@@ -24,3 +24,7 @@ jobs:
           echo "GOOD"
           echo "MORNING"
 
+      - name : Github Actions 자체 저장되어있는 변수
+        run: |
+          $echo $GITHUB_SHA
+          $echo $GITHUB_REPOSITORY
