@@ -5,11 +5,22 @@ on:
     branches:
       - main
 
+#하나의 workflow는 여러개의 job으로 구성됨
+#여러 job은 기본적으로 병렬적으로 수행됨
 jobs:
+  #job을 식별하기 위한 id
   My-Deploy-Job:
+    # ubuntu 환경 / 가장 최신 버전(latest)
     runs-on: ubuntu-latest
 
+    # steps: 특정 작업을 수행하는 가장 작은단위
+    # Job은 여러 Step들로 구성되어있다.
     steps:
       - name: Hello sohyeon
-        run: echo "Hello World"
+        run: echo "Hello World" #echo 리눅스 출력 명령어
+
+      - name: 여러 명령어 문장 작성하기
+        run: | #여러줄 입력하기 위함
+          echo "GOOD"
+          echo "MORNING"
 
